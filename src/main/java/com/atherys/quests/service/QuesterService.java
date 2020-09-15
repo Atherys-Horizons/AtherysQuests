@@ -200,4 +200,12 @@ public class QuesterService implements Observer<Event> {
 
         quester.addAttemptedQuest(quest.getId(), attemptedQuest);
     }
+
+    public void storeCachedPlayerData(SimpleQuester quester) {
+        repository.saveOneAsync(quester);
+    }
+
+    public void fetchAndCachePlayerData(UUID playerUUID) {
+        repository.fetchAndCachePlayerCharacter(playerUUID);
+    }
 }

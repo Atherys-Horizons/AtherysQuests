@@ -228,4 +228,13 @@ public class QuesterFacade {
             quest.getTimedComponent().ifPresent(timedComponent -> ((TimeComponent) timedComponent).startTiming());
         });
     }
+
+    public void storePlayerData(Player player) {
+        questerService.storeCachedPlayerData(questerService.getOrCreateQuester(player.getUniqueId()));
+    }
+
+    public void fetchPlayerData(Player player) {
+        questerService.fetchAndCachePlayerData(player.getUniqueId());
+    }
+
 }

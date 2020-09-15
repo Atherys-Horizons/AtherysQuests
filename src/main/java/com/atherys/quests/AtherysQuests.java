@@ -130,6 +130,7 @@ public class AtherysQuests {
         Sponge.getEventManager().registerListeners(this, components.inventoryListener);
         Sponge.getEventManager().registerListeners(this, components.internalListener);
         Sponge.getEventManager().registerListeners(this, components.questListener);
+        Sponge.getEventManager().registerListeners(this, components.playerListener);
 
         if (components.config.SCRIPT_TYPE.equals(ScriptConfig.GROOVY_TYPE)) {
             GroovyLibrary.getInstance().extendWith(QuestExtension.getInstance());
@@ -387,5 +388,8 @@ public class AtherysQuests {
 
         @Inject
         QuestListener questListener;
+
+        @Inject
+        PlayerListener playerListener;
     }
 }

@@ -57,5 +57,6 @@ public class AtherysQuestsModule extends AbstractModule {
         bind(InventoryListener.class).in(Scopes.SINGLETON);
         bind(InternalListener.class).in(Scopes.SINGLETON);
         bind(QuestListener.class).in(Scopes.SINGLETON);
+        bind(PlayerListener.class).in(Scopes.SINGLETON);
     }
 }
